@@ -110,8 +110,8 @@
             canvas.height = CANVAS_HEIGHT;
 
             // Adjust game elements based on screen size
-            STARTING_MOVE_DISTANCE = CANVAS_WIDTH * 0.003;
-            MOVE_INCREMENT = CANVAS_WIDTH * 0.001;
+            STARTING_MOVE_DISTANCE = 0.5;
+            MOVE_INCREMENT = 0.5;
             PLAYER_SIZE = Math.min(CANVAS_WIDTH * 0.05, CANVAS_HEIGHT * 0.05);
             CAR_WIDTH = Math.min(CANVAS_WIDTH * 0.1, CANVAS_HEIGHT * 0.08);
             CAR_HEIGHT = Math.min(CANVAS_HEIGHT * 0.05, CANVAS_WIDTH * 0.04);
@@ -259,7 +259,7 @@
 
         function drawQuote() {
             if (quoteDisplayTime > 0) {
-                ctx.fillStyle = 'purple';
+                ctx.fillStyle = 'pink';
                 ctx.font = `${Math.min(CANVAS_WIDTH * 0.03, 18)}px Arial`;
                 ctx.textAlign = 'right';
                 
