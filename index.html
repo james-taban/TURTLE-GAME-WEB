@@ -39,8 +39,7 @@
             bottom: 20px;
             left: 50%;
             transform: translateX(-50%);
-            display: flex;
-            justify-content: center;
+            display: none; /* Hide by default */
         }
         .control-button {
             width: 60px;
@@ -67,6 +66,7 @@
         const ctx = canvas.getContext('2d');
         const refreshButton = document.getElementById('refreshButton');
         const upButton = document.getElementById('upButton');
+        const controls = document.getElementById('controls');
 
         let CANVAS_WIDTH, CANVAS_HEIGHT;
         const COLORS = ["red", "orange", "yellow", "green", "blue", "purple"];
@@ -92,6 +92,16 @@
         let carSpeed;
         let quoteDisplayTime = 0;
         let currentQuote = '';
+
+        // Function to detect if the device is mobile
+        function isMobileDevice() {
+            return (typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1);
+        }
+
+        // Show controls if it's a mobile device
+        if (isMobileDevice()) {
+            controls.style.display = 'flex';
+        }
 
         function setDimensions() {
             CANVAS_WIDTH = window.innerWidth;
